@@ -32,11 +32,11 @@ public class ApiController : ControllerBase
 
         if (cc.Any())
         {
-            return Ok(cc); // Devuelve la lista de CreditCardDTO con código de estado 200 OK
+            return Ok(cc);
         }
         else
         {
-            return NoContent(); // Devuelve código de estado 204 No Content si no hay elementos
+            return NoContent(); 
         }
     }
 
