@@ -1,0 +1,31 @@
+﻿
+@model List<CreditCardDTO>;
+
+<table class="table table-sm table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Número de Tarjeta</th>
+            <th scope="col">Nombre Titular</th>
+            <th scope="col">Fecha Vencimiento</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@EnmascararCreditCard.EnmascararTexto(@item.CardNumber)</td>
+                <td>@item.CardName</td>
+                <td>@item.ExpirationDate</td>
+                <td><a asp-action="Edit" class="btn btn-info" asp-route-id="@item.Id">Editar</a></td>
+                <td> <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Eliminar</a></td>             
+            </tr>            
+        }
+       
+    </tbody>
+</table>
+

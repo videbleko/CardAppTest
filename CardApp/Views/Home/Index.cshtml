@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Credit Card App";
+}
+@model CreditCardDTO;
+
+
+<div class="container">
+    <div class="card-template">
+
+
+        <div class="card card--blue">
+            <div class="card__front">
+                <p>monobank <span>| Universal Bank</span> <img src="/img/signal.png" /></p>
+
+                <!-- Template de la tarjeta -->
+                <div class="card__chip">
+                    <img src="/img/chip.png" />
+                </div>
+                <div class="card__logo"></div>
+                <p class="expired-date">valid <label id="ExpirationLabel">MM/YY</label> </p>
+                <div class="card__number">
+                    <label> 1234  5678  1234  5678</label>
+                </div>
+                <div class="card__info">
+                    <div class="card__holder" id="cardHolder">
+                        <label id="CardNameLabel">Jean Blanchard</label>
+
+                    </div>
+
+                    <img class="logo-mastercard" src="/img/logo.svg" />
+                </div>
+            </div>
+            <div class="card__back">
+                <div class="card__cvv"></div>
+            </div>
+        </div>
+    </div>
+    <div class="formulario-p">
+        <form method="post">
+            <!-- Formulario -->
+            <div class="form-columns">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="cardHolderInput">Número de Tarjeta</label>
+                        <input type="text" asp-for="CardNumber" min="16" maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardHolderInput">Nombre Titular</label>
+                        <input type="text" asp-for="CardName" id="CardNameId" maxlength="20" oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúüÁÉÍÓÚÜ\s]/g, '')" required>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                
+                        <label for="cardExpirationInput">Fecha de Vencimiento</label>
+                        <input type="text" asp-for="ExpirationDate" id="ExpirationInput" min="4" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardCvvInput">CVV</label>
+                        <input type="text" asp-for="CVV" maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                    </div>
+                </div>
+
+            </div>
+            <div asp-validation-summary="All"></div>
+
+            <input type="submit" class="add" value="Agregar Tarjeta" asp-action="Index" />
+            <button type="submit" class="cancel" onclick="reiniciarPagina()">Cancelar</button>
+        </form>
+    </div>
+</div>

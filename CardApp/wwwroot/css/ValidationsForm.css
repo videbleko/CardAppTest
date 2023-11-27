@@ -1,0 +1,16 @@
+﻿/*.input-validation-error {
+    background-color: #FC7659;
+    color: white;
+    border: 20px solid blue;
+}
+*/
+.validation-summary-errors{
+    color:red;
+    font-size:1rem;
+}
+
+input[type=text].input-validation-error {
+    background-color: #FFC3B6;
+    color: black;
+    border: 2px solid #FFC3B6;
+}
