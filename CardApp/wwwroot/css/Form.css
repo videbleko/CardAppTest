@@ -79,7 +79,7 @@ body {
     color: #718095;
     margin: 0 auto;
     margin-bottom: 3rem;
-    font-weight: bold; /* Peso de la fuente */
+    font-weight: bold;
     text-shadow: 0rem -0.05rem 0.1rem white;
     letter-spacing: 0.6rem;
 }
@@ -115,7 +115,7 @@ p.expired-date {
     text-shadow: 0rem 0rem 0.05rem white;
 }
 .card__cvv {
-    /* Estilos del CVV */
+  
 }
 
 .form {
